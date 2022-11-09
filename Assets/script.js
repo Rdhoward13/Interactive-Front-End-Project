@@ -4,7 +4,9 @@
 
 
 var title = document.getElementById("title")
+
 var card1 = document.querySelector(".card-1-body");
+
 var card2 = document.querySelector(".card-2");
 
 function getGameApi() {
@@ -36,38 +38,46 @@ function getGameApi() {
 				card1.appendChild(gameStart);
 				card1.appendChild(homeTeam);
 				card1.appendChild(awayTeam);
-
-
 			}
 		})
 }
 
-// Transform time from API
-// function getDate (date) {
-// var dateString = new Date(date)
-// var datetoPass = dateString.toDateString()
-// return datetoPass
-// }
-
 getGameApi();
 
-// fetch("https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h")
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '5c9e94c562msh1177d2f1faff343p1effe8jsnfd0a03ce8071',
-		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-	}
-};
+function getTopGoalScorer() {
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Key': '5c9e94c562msh1177d2f1faff343p1effe8jsnfd0a03ce8071',
+			'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+		}
+	};
+	
+	fetch('https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2022', options)
+		.then(function(response) {
+			return response.json();
+		})
+		.then(function(data){
+			console.log(data);
 
-fetch('https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/leagues?current=true', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+			for (var i = 0; i < data.response.length; i++) {
+				// // var topScorer1 = document.createElement("h3")
+
+				// topScorer1.textContent = data[i].response[0].player.name
+
+				// card2.appendChild(topScorer1) ;
+				
+				console.log(data.response[i].player.name)
+				console.log(data.response[i].statistics[0].goals.total)
+			}
+	
+		})	
+		.catch(err => console.error(err));
+
+}
+getGameApi();
+getTopGoalScorer();
 
 
 
