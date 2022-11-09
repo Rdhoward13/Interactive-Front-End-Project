@@ -57,7 +57,7 @@ const options = {
 	}
 };
 
-fetch('https://api-football-v1.p.rapidapi.com/v3/leagues?current=true', options)
+fetch('https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/leagues?current=true', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
