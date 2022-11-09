@@ -4,17 +4,30 @@ var emailInput = document.querySelector("#email");
 var passwordInput = document.querySelector("#password");
 var signUpButton = document.querySelector("#sign-up");
 
-signUpButton.addEventListener("click", function (event) {
-  event.preventDefault();
+var modalContent = document.querySelector("#modal-content");
+function renderLastRegistered() {
+  var email = localStorage.getItem("email");
+  var firstName = localStorage.getItem("first-name");
+  var lastName = localStorage.getItem("last-name");
 
-  // create user object from submission
-  var user = {
-    firstName: firstNameInput.value.trim(),
-    lastName: lastNameInput.value.trim(),
-    email: emailInput.value.trim(),
-    password: passwordInput.value.trim(),
-  };
+  if (!email || !firstName || lastName) {
+    return;
+  }
 
-  // set new submission to local storage
-  localStorage.setItem("user", JSON.stringify(user));
-});
+  emailInput.textContent = email;
+  firstNameInput.textContent = firstName;
+  lastNameInput.textContent = lastname;
+  if (email === "") {
+    displayMessage("error", "Email cannot be blank");
+  } else if (firstName === "") {
+    displayMessage("error", "first name cannot be blank");
+  } else {
+    displayMessage("success", "registered succesfully");
+  }
+}
+// signUpButton.addEventListener("click", function (event) {
+//   event.preventDefault();
+
+localStorage.setItem("email", emailInput);
+// localStorage.setItem("first-name", firstName);
+localStorage.setItem("last-name", lastNameInput);
