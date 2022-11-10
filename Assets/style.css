@@ -1,0 +1,25 @@
+*{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#main-games{
+    display:flex;
+    justify-content: center;
+    align-items: stretch;
+    border: 20px, solid black;
+}
+
+.column-games{
+display: block;
+font-size: 2rem;
+border: 20px, solid black;
+}
+
+.background-image {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("./Images/background-sports.jpg");
+    background-size: cover;
+    background-position: center;
+}
