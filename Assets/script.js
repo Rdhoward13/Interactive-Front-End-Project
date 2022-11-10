@@ -148,3 +148,16 @@ document.getElementById("btn").addEventListener("click", function () {
   var email = document.getElementById("Last Name");
   localStorage.setItem("Last Name", email.value);
 });
+document.getElementById("btn").addEventListener("click", function () {
+  var email = document.getElementById("exampleInputPassword1");
+  localStorage.setItem("Password", email.value);
+});
+document
+  .getElementById("exampleCheck1")
+  .addEventListener("change", function () {
+    if (this.checked) {
+      localStorage.setItem("checkbox", true);
+    } else {
+      localStorage.setItem("checkbox", false);
+    }
+  });
