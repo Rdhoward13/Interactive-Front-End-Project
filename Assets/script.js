@@ -136,28 +136,28 @@ getGamesApi();
 getTopGoalScorer();
 getTopAssists();
 
-document.getElementById("btn").addEventListener("click", function () {
-  var email = document.getElementById("exampleInputEmail1");
-  localStorage.setItem("Email", email.value);
-});
-document.getElementById("btn").addEventListener("click", function () {
-  var email = document.getElementById("First Name");
-  localStorage.setItem("First Name", email.value);
-});
-document.getElementById("btn").addEventListener("click", function () {
-  var email = document.getElementById("Last Name");
-  localStorage.setItem("Last Name", email.value);
-});
-document.getElementById("btn").addEventListener("click", function () {
-  var email = document.getElementById("exampleInputPassword1");
-  localStorage.setItem("Password", email.value);
-});
-document
-  .getElementById("exampleCheck1")
-  .addEventListener("change", function () {
-    if (this.checked) {
-      localStorage.setItem("checkbox", true);
-    } else {
-      localStorage.setItem("checkbox", false);
-    }
-  });
+var handleFormSubmit = function (event) {
+  event.preventDefault();
+  console.log("button-clicked");
+  var fName = document.getElementById("firstName").value.trim();
+  var lName = document.getElementById("lastName").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var password = document.getElementById("password").value.trim();
+  var checkBox = document.getElementById("checkBox").checked;
+
+  var payLoad = {
+    firstName: fName,
+    lastName: lName,
+    fullName: `${fName} ${lName}`,
+    email: email,
+    password: password,
+  };
+  console.log(payLoad);
+  localStorage.setItem("fName", fName);
+  localStorage.setItem("lName", lName);
+  localStorage.setItem("fullName", `${fName} ${lName}`);
+  localStorage.setItem("email", email);
+  localStorage.setItem("password", password);
+};
+
+document.getElementById("btn").addEventListener("click", handleFormSubmit);
