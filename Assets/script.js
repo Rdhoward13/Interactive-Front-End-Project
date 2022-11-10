@@ -26,8 +26,8 @@ function getGamesApi() {
 				var datetoPass = dateString.toDateString()
 				
 				gameStart.textContent = datetoPass
-				homeTeam.textContent = `${data[i].home_team} - H`;
-				awayTeam.textContent = `${data[i].away_team} - A`;
+				homeTeam.textContent = `${data[i].home_team} - (H)`;
+				awayTeam.textContent = `${data[i].away_team} - (A)`;
 				
 				card1.appendChild(gameStart);
 				card1.appendChild(homeTeam);
@@ -50,14 +50,34 @@ function getOddsApi() {
 
 			for (var i = 0; i < data.length; i++) {				
 				
-				var homeTeamOdds = document.createElement("p");
-				var awayTeamOdds = document.createElement("p");		
+				var teamA = document.createElement("p");
+				var teamAOdds = document.createElement("p");	
+				var teamB =	 document.createElement("p");
+				var teamBOdds =  document.createElement("p");
+				var draw =  document.createElement("p");
+				var drawOdds =  document.createElement("p");
 								
-				homeTeamOdds.textContent = `${data[i].bookmakers.outcomes} - H`;
-				// awayTeamOdds.textContent = `${data[i].bookmakers.markets.outcomes.price} - A`;
+				teamA.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].name}`;
+				teamAOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].price}`;
+				teamB.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].name}`;
+				teamBOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].price}`;
+				draw.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].name}`;
+				drawOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].price}`;
 								
-				card2.appendChild(homeTeamOdds);
-				card2.appendChild(awayTeamOdds);
+				card2.appendChild(teamA);
+				card2.appendChild(teamAOdds);
+				card2.appendChild(teamB);
+				card2.appendChild(teamBOdds);
+				card2.appendChild(draw);
+				card2.appendChild(drawOdds);
+
+				console.log(data[i].bookmakers[0].markets[0].outcomes[0].name)				
+				console.log(data[i].bookmakers[0].markets[0].outcomes[0].price)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[1].name)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[1].price)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[2].name)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[2].price)
+
 			}
 		})
 		// .catch(err => console.error(err));
