@@ -5,7 +5,7 @@ var card1 = document.querySelector(".card-1-body");
 var card2 = document.querySelector(".card-2-body");
 var card3 = document.querySelector(".card-3-body")
 
-function getGameApi() {
+function getGamesApi() {
 	var requestUrl = 'https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h';
 
 	fetch(requestUrl)
@@ -38,13 +38,30 @@ function getGameApi() {
 }
 
 
+function getOddsApi() {
+	var requestUrl = 'https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h';
 
+	fetch(requestUrl)
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
+			console.log(data);
 
-
-
-
-
-
+			for (var i = 0; i < data.length; i++) {				
+				
+				var homeTeamOdds = document.createElement("p");
+				var awayTeamOdds = document.createElement("p");		
+								
+				homeTeamOdds.textContent = `${data[i].bookmakers.outcomes} - H`;
+				// awayTeamOdds.textContent = `${data[i].bookmakers.markets.outcomes.price} - A`;
+								
+				card2.appendChild(homeTeamOdds);
+				card2.appendChild(awayTeamOdds);
+			}
+		})
+		// .catch(err => console.error(err));
+}
 
 
 function getTopGoalScorer() {
@@ -82,7 +99,7 @@ function getTopGoalScorer() {
 
 }
 
-function getTopAssits() {
+function getTopAssists() {
 	const options = {
 		method: 'GET',
 		headers: {
@@ -117,12 +134,13 @@ function getTopAssits() {
 
 }
 
-
-
-
-getGameApi();
+getOddsApi();
+getGamesApi();
 getTopGoalScorer();
-getTopAssits();
+getTopAssists();
+
+
+
 
 
 
