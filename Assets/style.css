@@ -2,11 +2,16 @@
 
 }
 
-#main-games{
+.row{
     display:flex;
     justify-content: center;
     align-items: stretch;
+    text-align: center;
     border: 20px, solid black;
+    margin: 10px;
+    border-bottom: 5px solid blue;
+    height: 1000px;
+    overflow:scroll
 }
 
 .column-games{
@@ -22,4 +27,8 @@ border: 20px, solid black;
     background-image: url("./Images/background-sports.jpg");
     background-size: cover;
     background-position: center;
+}
+
+#logInField {
+    $modal-inner-padding: 15px
 }
