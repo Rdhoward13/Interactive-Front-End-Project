@@ -1,10 +1,22 @@
+
+var apiLiveSportKey_A = "4294190c96a3485afbc5b3024f0fbdf6"
+
+var apiLiveSportsKey_R = "9ca2f6b436e08a74e39b07ff1ca37968"
+
+var apiFootballKey_R = "056b3ae817msh9b1a9754a5e4878p18e659jsn6d10838ade8d"
+
+var apiFootballKey_A = "5c9e94c562msh1177d2f1faff343p1effe8jsnfd0a03ce8071"
+
+
+
+
 var card1 = document.querySelector(".card-1-body");
 var card2 = document.querySelector(".card-2-body");
 var card3 = document.querySelector(".card-3-body");
 
 function getGamesApi() {
   var requestUrl =
-    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h";
+    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=9ca2f6b436e08a74e39b07ff1ca37968&regions=uk&markets=h2h";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -35,7 +47,7 @@ function getGamesApi() {
 }
 
 function getOddsApi() {
-	var requestUrl = 'https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h';
+	var requestUrl = 'https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=9ca2f6b436e08a74e39b07ff1ca37968&regions=uk&markets=h2h';
 
 	fetch(requestUrl)
 		.then(function (response) {
