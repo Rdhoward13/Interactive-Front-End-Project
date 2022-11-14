@@ -31,24 +31,9 @@ border: 20px, solid black;
     background-position: center;
 }
 
-<<<<<<< HEAD
-=======
-.card-title {
-    background-color: rgb(70, 69, 69);
-    color: white;
-
-}
-
-#Upcoming-Games, #Game-Odds, #Player-Statistics {
-    margin-left: 20px;
-    margin-right: 20px;
-}
 
 
->>>>>>> 991593bf891a9ca93c4b83d43d442a15b66f1510
-
-
-@media only screen and (max-width: 600px) {...}
+@media only screen and (max-width: 600px) {}
 
 #UpcomingGames, .card-img-top{
         border: 1px solid #ddd;

@@ -13,8 +13,7 @@ var card2 = document.querySelector(".card-2-body");
 var card3 = document.querySelector(".card-3-body");
 //api keys and url
 function getGamesApi() {
-  var requestUrl =
-    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=9ca2f6b436e08a74e39b07ff1ca37968&regions=uk&markets=h2h";
+  var requestUrl = "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=" + apiLiveSportsKey_R + "&regions=uk&markets=h2h";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -45,8 +44,7 @@ function getGamesApi() {
 }
 
 function getOddsApi() {
-  var requestUrl =
-    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=9ca2f6b436e08a74e39b07ff1ca37968&regions=uk&markets=h2h";
+	var requestUrl = "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=" + apiLiveSportsKey_R + "&regions=uk&markets=h2h";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -63,44 +61,27 @@ function getOddsApi() {
         var draw = document.createElement("p");
         var drawOdds = document.createElement("p");
 
-        teamA.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].name}`;
-        teamAOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].price}`;
-        teamB.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].name}`;
-        teamBOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].price}`;
-        draw.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].name}`;
-        drawOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].price}`;
-
-        card2.appendChild(teamA);
-        card2.appendChild(teamAOdds);
-        card2.appendChild(teamB);
-        card2.appendChild(teamBOdds);
-        card2.appendChild(draw);
-        card2.appendChild(drawOdds);
-
-        console.log(data[i].bookmakers[0].markets[0].outcomes[0].name);
-        console.log(data[i].bookmakers[0].markets[0].outcomes[0].price);
-        console.log(data[i].bookmakers[0].markets[0].outcomes[1].name);
-        console.log(data[i].bookmakers[0].markets[0].outcomes[1].price);
-        console.log(data[i].bookmakers[0].markets[0].outcomes[2].name);
-        console.log(data[i].bookmakers[0].markets[0].outcomes[2].price);
-      }
-    });
-  // .catch(err => console.error(err));
+				console.log(data[i].bookmakers[0].markets[0].outcomes[0].name)				
+				console.log(data[i].bookmakers[0].markets[0].outcomes[0].price)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[1].name)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[1].price)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[2].name)
+				console.log(data[i].bookmakers[0].markets[0].outcomes[2].price)
+			}
+		})
+		.catch(err => console.error(err));
 }
-//second api
+//fetch calls to third api's
 function getTopGoalScorer() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "5c9e94c562msh1177d2f1faff343p1effe8jsnfd0a03ce8071",
+      "X-RapidAPI-Key": apiFootballKey_R,
       "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
     },
   };
 
-  fetch(
-    "https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2022",
-    options
-  )
+  fetch("https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2022", options)
     .then(function (response) {
       return response.json();
     })
@@ -128,15 +109,12 @@ function getTopAssists() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "5c9e94c562msh1177d2f1faff343p1effe8jsnfd0a03ce8071",
+      "X-RapidAPI-Key": apiFootballKey_R,
       "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
     },
   };
 
-  fetch(
-    "https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/players/topassists?league=39&season=2022",
-    options
-  )
+  fetch("https://rjw-cors.herokuapp.com/https://api-football-v1.p.rapidapi.com/v3/players/topassists?league=39&season=2022", options)
     .then(function (response) {
       return response.json();
     })
