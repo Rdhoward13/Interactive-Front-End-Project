@@ -14,4 +14,4 @@ During the making of our website as a group we have learned that when there are 
 ![image](https://user-images.githubusercontent.com/114687261/201730501-968115b1-78a5-4094-bdb5-7034104c8534.png)
 
 ## Links
-Deployed site- 
+Deployed site- https://giulia037.github.io/Fan-Zone/
