@@ -1,10 +1,20 @@
+//global variables
+
+var apiLiveSportKey_A = "4294190c96a3485afbc5b3024f0fbdf6";
+
+var apiLiveSportsKey_R = "9ca2f6b436e08a74e39b07ff1ca37968";
+
+var apiFootballKey_R = "056b3ae817msh9b1a9754a5e4878p18e659jsn6d10838ade8d";
+
+var apiFootballKey_A = "5c9e94c562msh1177d2f1faff343p1effe8jsnfd0a03ce8071";
+
 var card1 = document.querySelector(".card-1-body");
 var card2 = document.querySelector(".card-2-body");
 var card3 = document.querySelector(".card-3-body");
-
+//api keys and url
 function getGamesApi() {
   var requestUrl =
-    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h";
+    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=9ca2f6b436e08a74e39b07ff1ca37968&regions=uk&markets=h2h";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -35,50 +45,49 @@ function getGamesApi() {
 }
 
 function getOddsApi() {
-	var requestUrl = 'https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=4294190c96a3485afbc5b3024f0fbdf6&regions=uk&markets=h2h';
+  var requestUrl =
+    "https://rjw-cors.herokuapp.com/https://api.the-odds-api.com/v4/sports/soccer_epl/odds?apiKey=9ca2f6b436e08a74e39b07ff1ca37968&regions=uk&markets=h2h";
 
-	fetch(requestUrl)
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (data) {
-			console.log(data);
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
 
-			for (var i = 0; i < data.length; i++) {				
-				
-				var teamA = document.createElement("p");
-				var teamAOdds = document.createElement("p");	
-				var teamB =	 document.createElement("p");
-				var teamBOdds =  document.createElement("p");
-				var draw =  document.createElement("p");
-				var drawOdds =  document.createElement("p");
-								
-				teamA.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].name}`;
-				teamAOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].price}`;
-				teamB.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].name}`;
-				teamBOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].price}`;
-				draw.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].name}`;
-				drawOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].price}`;
-								
-				card2.appendChild(teamA);
-				card2.appendChild(teamAOdds);
-				card2.appendChild(teamB);
-				card2.appendChild(teamBOdds);
-				card2.appendChild(draw);
-				card2.appendChild(drawOdds);
+      for (var i = 0; i < data.length; i++) {
+        var teamA = document.createElement("p");
+        var teamAOdds = document.createElement("p");
+        var teamB = document.createElement("p");
+        var teamBOdds = document.createElement("p");
+        var draw = document.createElement("p");
+        var drawOdds = document.createElement("p");
 
-				console.log(data[i].bookmakers[0].markets[0].outcomes[0].name)				
-				console.log(data[i].bookmakers[0].markets[0].outcomes[0].price)
-				console.log(data[i].bookmakers[0].markets[0].outcomes[1].name)
-				console.log(data[i].bookmakers[0].markets[0].outcomes[1].price)
-				console.log(data[i].bookmakers[0].markets[0].outcomes[2].name)
-				console.log(data[i].bookmakers[0].markets[0].outcomes[2].price)
-			}
-		})
-		// .catch(err => console.error(err));
+        teamA.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].name}`;
+        teamAOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[0].price}`;
+        teamB.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].name}`;
+        teamBOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[1].price}`;
+        draw.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].name}`;
+        drawOdds.textContent = `${data[i].bookmakers[0].markets[0].outcomes[2].price}`;
+
+        card2.appendChild(teamA);
+        card2.appendChild(teamAOdds);
+        card2.appendChild(teamB);
+        card2.appendChild(teamBOdds);
+        card2.appendChild(draw);
+        card2.appendChild(drawOdds);
+
+        console.log(data[i].bookmakers[0].markets[0].outcomes[0].name);
+        console.log(data[i].bookmakers[0].markets[0].outcomes[0].price);
+        console.log(data[i].bookmakers[0].markets[0].outcomes[1].name);
+        console.log(data[i].bookmakers[0].markets[0].outcomes[1].price);
+        console.log(data[i].bookmakers[0].markets[0].outcomes[2].name);
+        console.log(data[i].bookmakers[0].markets[0].outcomes[2].price);
+      }
+    });
+  // .catch(err => console.error(err));
 }
-
-
+//second api
 function getTopGoalScorer() {
   const options = {
     method: "GET",
@@ -155,7 +164,7 @@ getOddsApi();
 getGamesApi();
 getTopGoalScorer();
 getTopAssists();
-
+//localStorage section to store user data
 var handleFormSubmit = function (event) {
   event.preventDefault();
   console.log("button-clicked");

@@ -11,12 +11,12 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./Assets/style.css">
 
-  <title>Fan Zone</title>
+  <title>FanZone</title>
 </head>
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light border border-primary">
-    <a class="navbar-brand" href="#">Fan Zone</a>
+    <a class="navbar-brand" href="#">FanZone</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Teams
+            Sports
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Soccer</a>
@@ -37,11 +37,9 @@
             <a class="dropdown-item" href="#">Rugby</a>
             <a class="dropdown-item" href="#">Tennis</a>
             <a class="dropdown-item" href="#">Boxing</a>
-            <a class="dropdown-item" href="#">Lacrosse</a>
+            <a class="dropdown-item" href="#">UFC</a>
             <a class="dropdown-item" href="#">Golf</a>
             <a class="dropdown-item" href="#">Hockey</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">International</a>
           </div>
         </li>
       </ul>
@@ -57,27 +55,27 @@
           <div class="modal-content">
             <form>
               <div class="mb-3">
-                <label for="First Name" class="form-label">First Name</label>
+                <label for="First Name" class="form-label"> First Name</label>
                 <input type="First Name" class="form-control" id="firstName">
               </div>
               <div class="mb-3">
-                <label for="Last Name" class="form-label">Last Name</label>
+                <label for="Last Name" class="form-label"> Last Name</label>
                 <input type="Last Name" class="form-control" id="lastName">
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label"> Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div id="emailHelp" class="form-text"> We'll never share your email with anyone else.</div>
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label"> Password</label>
                 <input type="password" class="form-control" id="password">
               </div>
               <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="checkBox">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <label class="form-check-label" for="exampleCheck1"> Subscribe to our news letter.</label>
               </div>
-              <button type="submit" id="btn" class="btn btn-primary">Submit</button>
+              <button type="submit" id="btn" class="btn btn-primary"> Submit</button>
             </form>
           </div>
         </div>
@@ -87,10 +85,11 @@
     </div>
   </nav>
 </header>
+
 <body>
   <main>
     <div class="jumbotron p-3 mb-2 bg-dark text-white">
-      <h1 class="display-4">Fan Zone</h1>
+      <h1 class="display-4">FanZone</h1>
       <p class="lead">The best odds site you will ever need.</p>
       <hr class="my-4">
       <!-- Button trigger modal -->
@@ -122,44 +121,56 @@
     </div>
 
     <div class="background-image">
-
     </div>
 
 
-    <div class="container text-center" id="main-games">
-      <div class="row">
-        <div id="column-upcoming-games">
-          <h2 class="card-title">Upcoming Games</h2>
-          <img src="..." class="card-img-top" alt="...">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="col-md-4 border border-grey" Id="Upcoming-Games">
+        <div class="card w-40">
           <div class="card-1-body">
-            <p>...</p>
+            <h2 class="card-title">Upcoming Games</h2>
+            <img src="./Assets/Images/vector-soccer-game-design.jpg" class="card-img-top" alt="Soccer Ball">
+            <div class="card-body">
+            </div>
           </div>
         </div>
       </div>
 
-
-
-      <div class="column-game-odds">
-        <div class="card-2-body">
-          <h2 class="card-title">Game Odds</h2>
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
+      <div class="col-md-4 border border-grey" id="Game-Odds">
+        <div class="card w-40">
+          <div class="card-2-body">
+            <h2 class="card-title">Game Odds</h2>
+            <img src="./Assets/Images/7d6f549a1c91b078dccd0c5207c88d6c.jpg" class="card-img-top" alt="Man playing soccer">
+            <div class="card-body">
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
     </div>
 
-
-
-
-    <div class="col-md-4 .me-auto border border-grey">
-      <div class="card-3-body" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2 class="card-title">Player Statistics</h2>
-
+    <div class="row">
+      <div class="col-md-4 border border-grey" id="Player-Statistics">
+        <div class="card w-90">
+          <div class="card-3-body">
+            <img src="./Assets/Images/kissclipart-statistics-clipart-computer-icons-chart-statistics-04627b2dce267f3a.jpg" class="card-img-top" alt="Graph">
+            <div class="card-body">
+              <h2 class="card-title">Player Statistics</h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>
