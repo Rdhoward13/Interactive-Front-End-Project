@@ -1,6 +1,7 @@
 # Interactive-Front-End-Project-Fan Zone
 
 ## Description
+
 For this project we had to build a website that used two sever-side web apis. To hit our acceptance criteria we decided to make a web application that would help soccer fans place wages on soccer games.
 The two sever side web apis we used were a global sport api that contained data for soccer and numerous other sports, the second wep api focused only on soccer. 
 This became a challenge for our group. We had too much data and we were not sure where to go from there. However, our group decided we should focus on a small section of the data that was provided for us by our web api.
@@ -11,7 +12,10 @@ After adding our last bit of CSS to make the page more attention grabbing to the
 During the making of our website as a group we have learned that when there are no current games there will be no data in game odds due to the season being over. 
 
 ## Screenshots
+
 ![image](https://user-images.githubusercontent.com/114687261/201730501-968115b1-78a5-4094-bdb5-7034104c8534.png)
 
+
 ## Links
+
 Deployed site- https://giulia037.github.io/Fan-Zone/
