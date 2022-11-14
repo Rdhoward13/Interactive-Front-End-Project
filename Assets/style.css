@@ -12,6 +12,7 @@
     border-bottom: 5px solid rgb(70, 69, 69);
     height: 1000px;
     overflow:scroll
+
 }
 
 
@@ -30,6 +31,8 @@ border: 20px, solid black;
     background-position: center;
 }
 
+<<<<<<< HEAD
+=======
 .card-title {
     background-color: rgb(70, 69, 69);
     color: white;
@@ -42,3 +45,29 @@ border: 20px, solid black;
 }
 
 
+>>>>>>> 991593bf891a9ca93c4b83d43d442a15b66f1510
+
+
+@media only screen and (max-width: 600px) {...}
+
+#UpcomingGames, .card-img-top{
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+
+      #Game-Odds, .card-img-top{
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }    
+      #Player-Statistics, .card-img-top{
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }    
+
+      
