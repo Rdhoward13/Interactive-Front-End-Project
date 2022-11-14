@@ -87,7 +87,7 @@ function getOddsApi() {
     });
   // .catch(err => console.error(err));
 }
-//second api
+//fetch calls to third api's
 function getTopGoalScorer() {
   const options = {
     method: "GET",
