@@ -43,45 +43,52 @@
           </div>
         </li>
       </ul>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logInField">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Sign Up
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="logInField" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="logInFieldLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg text-dark">
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <form>
-              <div class="mb-3">
-                <label for="First Name" class="form-label"> First Name</label>
-                <input type="First Name" class="form-control" id="firstName">
-              </div>
-              <div class="mb-3">
-                <label for="Last Name" class="form-label"> Last Name</label>
-                <input type="Last Name" class="form-control" id="lastName">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"> Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text"> We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"> Password</label>
-                <input type="password" class="form-control" id="password">
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="checkBox">
-                <label class="form-check-label" for="exampleCheck1"> Subscribe to our news letter.</label>
-              </div>
-              <button type="submit" id="btn" class="btn btn-primary" data-bs-dismiss="modal"> Submit</button>
-              
-            </form>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Newsletter Subscription</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="First Name" class="form-label"> First Name</label>
+                  <input type="First Name" class="form-control" id="firstName">
+                </div>
+                <div class="mb-3">
+                  <label for="Last Name" class="form-label"> Last Name</label>
+                  <input type="Last Name" class="form-control" id="lastName">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text"> We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"> Password</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="checkBox">
+                  <label class="form-check-label" for="exampleCheck1"> Subscribe to our newsletter.</label>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="btn" data-bs-dismiss="modal">Submit</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
     </div>
   </nav>
@@ -99,9 +106,8 @@
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="aboutUs" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="aboutUsLabel" aria-hidden="true">
-        <div class="modal-dialog text-dark">
+      <div class="modal fade" id="aboutUs" tabindex="-1" role="dialog" aria-labelledby="aboutUsLabel">
+        <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="aboutUsLabel">About Us</h1>
@@ -128,7 +134,7 @@
           <div class="card w-40">
             <div class="card-1-body">
               <h2 class="card-title">Upcoming Games</h2>
-              <img src="..." class="card-img-top" alt="...">
+              <img src="./Assets/Images/vector-soccer-game-design.jpg" class="card-img-top" alt="Soccer Ball">
               <div class="card-body">
             </div>
           </div>
@@ -139,7 +145,8 @@
         <div class="card w-40">
           <div class="card-2-body">
             <h2 class="card-title">Game Odds</h2>
-            <img src="./Assets/Images/7d6f549a1c91b078dccd0c5207c88d6c.jpg" class="card-img-top" alt="Man playing soccer">
+            <img src="./Assets/Images/7d6f549a1c91b078dccd0c5207c88d6c.jpg" class="card-img-top"
+              alt="Man playing soccer">
             <div class="card-body">
             </div>
           </div>
@@ -151,7 +158,9 @@
       <div class="col-md-4 border border-grey" id="Player-Statistics">
         <div class="card w-90">
           <div class="card-3-body">
-            <img src="./Assets/Images/kissclipart-statistics-clipart-computer-icons-chart-statistics-04627b2dce267f3a.jpg" class="card-img-top" alt="Graph">
+            <img
+              src="./Assets/Images/kissclipart-statistics-clipart-computer-icons-chart-statistics-04627b2dce267f3a.jpg"
+              class="card-img-top" alt="Graph">
             <div class="card-body">
               <h2 class="card-title">Player Statistics</h2>
             </div>
@@ -159,11 +168,11 @@
         </div>
       </div>
     </div>
-    <!-- Optional JavaScript -->
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
       integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
       crossorigin="anonymous"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
